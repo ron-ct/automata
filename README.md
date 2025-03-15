@@ -1,2 +1,2 @@
 # automata
-automata theory Finite State Machines
+automata theory
