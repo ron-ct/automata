@@ -1,0 +1,14 @@
+An elevator(lift) machine helps people navigate the ten floors at the
+JKUAT towers in Nairobi city. The machine waits for students and/or
+staff to press the floor they wish to go to and then assigns them entry
+doors. Three doors A, B and C alight at different floors of the building as
+follows:-
+Door A serves ground floor upto 5th floor.
+Door B serves ground floor upto 8th floor.
+Door C serves ground floor upto 10th floor.
+
+
+Using a programming language of your choice write a
+computer program to implement the above machine.
+
+Simulate this problem with an appropriate User Interface
