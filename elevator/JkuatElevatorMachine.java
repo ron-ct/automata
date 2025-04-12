@@ -9,7 +9,7 @@ public class JkuatElevatorMachine{
 
     public JkuatElevatorMachine(){
         this.userCurrentFloor = 0;
-        this.elevatorState = "Idle";
+        this.elevatorState = "idle";
     }
 
     /**
@@ -36,6 +36,7 @@ public class JkuatElevatorMachine{
         }
 
         System.out.println("Request received: Move from floor "+ userCurrentFloor+ " to " + requestedFloor);
+        System.out.println("Kindly enter: "+ door);
 
         //Change state from Idle to moving
         elevatorState = "Moving";
