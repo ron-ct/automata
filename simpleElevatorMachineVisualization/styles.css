@@ -16,14 +16,21 @@ background-color: #222; }
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 #head{margin: 0 auto;}
+
 #userFeedback{
-    background-color: white;
+    background-color: #b0c4de;
     height: 100px;
-    width: 100px;
+    width: 300px;
     border: cyan 1px double;
-    margin: auto;
+    margin: 100px auto;
     font-size: medium;
     color: orange;
+    padding: auto;
+
+}
+
+#userFeedbackLine{
+    margin: auto;
 }
 h1{
     color: rgb(80, 185, 20);
@@ -81,7 +88,7 @@ h1{
     /* Shafts container: three shafts arranged side by side */
 #shafts-container {
       position: absolute;
-      width: 300px;
+      width: 400px;
       height: 100%;
       left: 50%;
       transform: translateX(-50%);

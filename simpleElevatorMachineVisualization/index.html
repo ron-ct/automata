@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>JKUAT TOWERS</title>
-  <link rel="stylesheet" href="/public/styles.css">
+  <link rel="stylesheet" href="styles.css">
   
 </head>
 <body>
  
-
   <h1 id="head">JKUAT TOWERS BUILDING</h1>
-<div id="setup">
-  <div id="user_menu"> Select Floor
+  
+  <div id="setup" class="grid-container">
+    <div id="user_menu"> Select Floor
     <button class="menu_buttons" id="0">G</button>
     <button class="menu_buttons" id="1">1</button>
     <button class="menu_buttons" id="2">2</button>
@@ -26,8 +26,13 @@
     
   </div>
 
-  <div id="userFeedback"></div>
-  <div id="building">
+  <div id="userFeedbackdiv">
+    <p id="userFeedback"></p>
+
+  </div>
+
+
+  <div id="building" class="grid-item">
     <!-- Floor lines will be inserted via JavaScript -->
     <div id="shafts-container">
       <!-- Elevator A (red) -->
