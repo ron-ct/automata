@@ -1,6 +1,5 @@
 package elevator;
 import java.util.Scanner;
-import automataExceptions.*;
 
 
 public class JkuatElevatorMachine{
@@ -32,11 +31,40 @@ public class JkuatElevatorMachine{
         String door = getDoor(requestedFloor);
         if(door == null){return;}
         if(requestedFloor == userCurrentFloor){
+            System.out.println("You are already on the " + requestedFloor + " floor.");
             return;
         }
 
         System.out.println("Request received: Move from floor "+ userCurrentFloor+ " to " + requestedFloor);
         System.out.println("Kindly enter: "+ door);
+        System.out.println("Door "+ door+ " opens. User may enter...");
+
+        for(int i = 5; i >= 0; i --){
+            System.out.print("\r " + i);
+             try{
+        Thread.sleep(1000);
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+
+        }
+        System.out.println();
+        System.out.println("Door " + door + " closes.");
+
+
+        System.out.println("Elevator will start moving shortly...");
+        for(int i = 5; i >= 0; i --){
+            System.out.print("\r" + i);
+             try{
+        Thread.sleep(1000);
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+
+        }
+        System.out.println();
 
         //Change state from Idle to moving
         elevatorState = "Moving";
@@ -56,40 +84,55 @@ public class JkuatElevatorMachine{
         }
 
         //Simulate Movement
-        try{
-            Thread.sleep(estimateTime(requestedFloor));
-        }catch (InterruptedException e){
+        int timeFloor = estimateTime(requestedFloor);
+        int timeToFloor = timeFloor / 1000;
+
+        for(int i = timeToFloor; i >= 0; i--){
+
+            System.out.print("\r" + i);
+
+            try{Thread.sleep(1000);}
+            catch (InterruptedException e){
             e.printStackTrace();
+        }
         }
 
         //change state to arrived
         userCurrentFloor = requestedFloor;
         elevatorState = "Arrived";
+        System.out.println();
 
-        System.out.println("[Arrived] Elevator has reached floor "+ userCurrentFloor);
-        System.out.println("Door opened. Users may enter/exit.");
+        System.out.println("*[ARRIVED]* Elevator has reached floor "+ userCurrentFloor);
+        System.out.println("Door opened. Users may kindly exit.");
 
         //simulate door open duration
-        try {
+        for(int i = 5; i >=0; i--){
+            System.out.print("\r" + i);
+            try {
             Thread.sleep(1000); //Door open delay
         }catch (InterruptedException e){
             e.printStackTrace();
         }
-        System.out.println(door + " closes");
+        
+        }
+
+        System.out.println();
+
+        System.out.println(door + " closes.");
+
 
         //change state to idle
         elevatorState = "idle";
         System.out.println("Elevator is now idle at floor "+ userCurrentFloor);
 
-
-
-
     }
 
     public int estimateTime(int requestedFloor){
         int difference = requestedFloor - userCurrentFloor ;
-        return difference * 2000; // 2000 milliseconds for each floor
-
+        if(difference < 0){
+            difference = userCurrentFloor - requestedFloor;
+        }
+        return difference * 2000;
     }
 
 }
