@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #222;
+}
+
+/* Header */
+#head {
+    margin: 20px auto;
+    color: rgb(80, 185, 20);
+    text-align: center;
+    font-size: 2em;
+}
+
+/* UI Panel for floor selection */
+#user_menu {
+    margin: 20px;
+    max-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+    background: rgb(80, 185, 20);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
+}
+
+/* Feedback panel */
+#userFeedbackdiv {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#userFeedback {
+    background-color: #b0c4de;
+    height: 100px;
+    width: 300px;
+    border: 1px double cyan;
+    font-size: medium;
+    color: orange;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/* Floor selection buttons */
+.menu_buttons {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #2B3A67, #1A2639);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E8C547;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    margin: 0 auto;
+}
+
+.menu_buttons:hover {
+    background: radial-gradient(circle, #3C4F8A, #2B3A67);
+}
+
+.menu_buttons:active {
+    background: radial-gradient(circle, #4A4A4A, #333);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* All to Ground button */
+#allToGround {
+    width: 100px;
+    height: 40px;
+    background: radial-gradient(circle, #B22222, #8B0000);
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    margin: 0 auto;
+}
+
+#allToGround:hover {
+    background: radial-gradient(circle, #C82222, #9B0000);
+}
+
+#allToGround:active {
+    background: radial-gradient(circle, #4A4A4A, #333);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Building container */
+#setup {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#building {
+    width: 600px;
+    height: 660px; /* Matches 11 floors at 60px each */
+    position: relative;
+    border: 2px solid #333;
+    background: linear-gradient(180deg, #F5F5DC 0%, #E6E4D7 100%);
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Floor lines */
+.floor-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #666;
+}
+
+/* Shafts container */
+#shafts-container {
+    position: absolute;
+    width: 180px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Individual shaft styling */
+.shaft {
+    position: relative;
+    width: 56px;
+    height: 100%;
+    border: 2px solid #333;
+    background: #6D8299;
+}
+
+/* Elevator Cabin */
+.elevator {
+    position: absolute;
+    width: 52px;
+    height: 50px;
+    bottom: 0;
+    left: 2px;
+    background: #222;
+    overflow: hidden;
+}
+
+/* Door Panels */
+.door {
+    position: absolute;
+    top: 0;
+    width: 26px;
+    height: 100%;
+    background: linear-gradient(135deg, #E0E0E0, #B0B0B0, #F5F5F5);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.5);
+    transition: left 0.5s;
+    cursor: pointer;
+}
+
+.door:hover {
+    opacity: 0.9;
+}
+
+.door.left {
+    left: 0;
+}
+
+.door.right {
+    left: 26px;
+}
