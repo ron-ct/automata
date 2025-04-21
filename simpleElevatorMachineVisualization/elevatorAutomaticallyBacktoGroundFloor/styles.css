@@ -1,0 +1,126 @@
+ body { margin: 0; font-family: sans-serif;
+background-color: #222; }
+    /* UI Panel for floor selection and messages */
+
+#user_menu {
+    margin-top: 20px;
+    max-width: 100px;
+    max-height: 600px;
+    flex-direction: column;
+    display: block;
+    gap: 10px;
+    padding: 20px;
+    background: rgb(80, 185, 20);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+#head{margin: 0 auto;}
+
+#userFeedback{
+    background-color: #b0c4de;
+    height: 100px;
+    width: 300px;
+    border: cyan 1px double;
+    margin: 100px auto;
+    font-size: medium;
+    color: orange;
+    padding: auto;
+
+}
+
+#userFeedbackLine{
+    margin: auto;
+}
+h1{
+    color: rgb(80, 185, 20);
+    
+}
+.menu_buttons {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #ddd, #aaa);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(80, 150, 50);
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    margin: 10px auto;
+}
+.menu_buttons:active {
+    background: radial-gradient(circle, #bbb, #888);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.floor-button {
+      margin: 3px;
+      padding: 6px 10px;
+      cursor: pointer;
+}
+    /* Building Container */
+#building {
+     width: 600px;
+      height: 550px; /* 11 floors x 50px each */
+      position: relative;
+      border: 2px solid #333;
+      display: block;
+      margin: 20px auto;
+      background: linear-gradient(to top, #eee 0%, #ccc 100%);
+      background-color: white;
+}
+
+#setup{
+    display: flex;
+}
+    /* Floor lines */
+.floor-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #666;
+}
+    /* Shafts container: three shafts arranged side by side */
+#shafts-container {
+      position: absolute;
+      width: 400px;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+}
+    /* Individual shaft styling */
+.shaft {
+      position: relative;
+      width: 80px;
+      height: 100%;
+      border: 2px solid #333;
+      background: #999;
+}
+    /* Elevator Cabin */
+.elevator {
+      position: absolute;
+      width: 76px;
+      height: 50px;
+      bottom: 0; /* starts at Ground */
+      left: 2px;
+      background: #222;
+      overflow: hidden;
+}
+    /* Door Panels */
+.door {
+      position: absolute;
+      top: 0;
+      width: 38px; /* half the elevator width */
+      height: 100%;
+      transition: left 0.5s;
+}
+.door.left { left: 0; }
+.door.right { left: 38px; }
+ 
